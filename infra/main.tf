@@ -88,10 +88,6 @@ resource "aws_instance" "web" {
   vpc_security_group_ids      = [aws_security_group.web_sg.id]
   associate_public_ip_address = true
   user_data                   = file("${path.module}/userdata.sh")
-
-  # 🔑 Если используешь ключ для SSH:
-  # key_name = "your-keypair-name"
-
   tags = {
     Name = "bulls-web"
   }
